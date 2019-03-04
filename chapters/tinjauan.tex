@@ -1,0 +1,11 @@
+\chapter{Tinjauan}
+Konvolusi
+\begin{enumerate}
+\item Filter (3x3 dalam gambar) adalah tensor berat yang dipelajari dengan backpropagation
+\item Kesalahan umum: pikir kami merancang filter untuk menjadi detektor tepi, dll
+\item Bagian yang tumpang tindih akan dikalikan elemen-bijaksana dijumlahkan
+\item Secara konsep setara dengan "produk matrix dot"
+\item Jika filter berkorelasi dengan gambar, output akan menjadi jumlah yang sangat besar
+\item Jika berbeda, nilai output akan menjadi kecil
+\item Jadi, cara yang sama validnya untuk memikirkannya adalah "cross-corelation"
+\end{enumerate}
