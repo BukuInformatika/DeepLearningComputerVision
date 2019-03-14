@@ -1,39 +1,9 @@
-Halo dan selamat datang di pembelajaran neural jaringan convolutional canggih dalam Python bagian 9
-ini adalah salah satu kursus paling menarik yang pernah saya lakukan dan itu benar-benar menunjukkan seberapa cepat dan seberapa dalam belajar
-telah datang.
-
-Selama bertahun-tahun ketika saya pertama kali memulai seri pembelajaran mendalam saya, saya tidak pernah menganggap bahwa saya akan membuat dua seri
-kursus tentang jaring convolutional tetapi saya pikir apa yang akan Anda temukan adalah bahwa kursus ini sangat berbeda
-dari yang sebelumnya.
-
-Anda akan terkesan dengan betapa banyak materi yang harus kita bahas dan sebesar ini, tentu saja saya masih
-punya lebih banyak ide yang ingin saya tambahkan sebagai pembaruan di masa depan.
-Jadi izinkan saya memberi Anda ringkasan singkat tentang apa kursus ini.
-Pertama kita akan menjembatani kesenjangan antara arsitektur CNN dasar yang sudah Anda kenal dan sukai
-arsitektur novel modern seperti Viji Reznick dan Inception yang mungkin sudah Anda duga namanya
-setelah film.
-
-Kita akan menerapkan ini pada gambar sel darah dan membuat sistem yang memiliki ahli medis yang lebih baik
-daripada Anda atau saya.
-Itu ide yang cukup rapi jika Anda berpikir bahwa dokter masa depan bukanlah manusia tetapi robot.
-Kedua, salah satu tema utama dari kursus ini adalah kita beralih dari CNN ke sistem
-melibatkan CNN.
-
-Jadi apa yang saya maksud dengan itu.
-CNN melakukan satu klasifikasi gambar hal dasar dalam kursus ini, Anda akan melihat bagaimana kita dapat mengubah CNN
-ke dalam sistem deteksi objek yang tidak hanya mengklasifikasikan gambar tetapi dapat menemukan setiap objek dalam suatu gambar
-dan prediksi labelnya.
-
-Anda dapat membayangkan bahwa tugas seperti itu merupakan prasyarat dasar untuk kendaraan yang bisa menyetir sendiri.
-Kita akan melihat algoritma canggih yang disebut SSD tugas penglihatan komputer yang sangat populer
-yang memanfaatkan CNN'S disebut transfer gaya neuros.
-
-Di sinilah Anda mengambil satu gambar yang disebut gambar konten dan gambar lain disebut gambar gaya
-dan Anda menggabungkan ini untuk membuat gambar yang sama sekali baru seolah-olah Anda menyewa seorang pelukis untuk melukis konten
-dari gambar pertama dengan gaya yang lain tidak seperti pelukis manusia.
-Ini bisa dilakukan dalam hitungan detik.
-Saya harap Anda senang mempelajari aplikasi canggih CNN ini.
-Sampai jumpa di kelas.
+Halo dan selamat datang di neural convolutional canggih pembelajaran di python bagian 9 ini adalah salah satu kursus. Paling menarik yang saya lakukan dan iyu benar- benar membuktikan cepat dan mudah dipelajari, selama bertambahnya tahun komplikasi saya pertama kali mulai seri pembelajaran mendalam saya, saya tidak pernah mempertimbangkan akan membuat dua tentang konvolusional tetapi saya pikir apa yang akan anda temukan adalah kursus ini sangat berbeda dari sebelumnya. Anda akan terkesan dengan betapa banyak materi yang harus kita bahas dan ini, saya masih memiliki lebih banyak ide yang ingin saya tambahkan sebagai bantuan di masa depan.
+Jadi, izinkan saya memberi anda setuju singkat tentang kursus apa saja ini	:
+\begin{enumerate}
+\item Kita akan mengatur antara arsitektur CNN dasar yang sudah anda kenal dan menikmati arsitektur novel modern seperti Viji Reznick dan Inception yang mungkin anda tebak diberi sesuai nama film. Kami akan menggunakan ini pada gambar sel sel dan membuat sistem yang memiliki ahli medis yang lebih baik dari anda atau saya. Itu ide yang cukup rapi jika kamu berpikir tentang robot masa depan.
+\item Salah satu tema utama dari kursus ini kita beralih dari CNN ke sistem yang melibatkan CNN. CNN juga membuat satu gambar klasifikasi hal dasar dalam kursus ini anda akan melihat bagaimana kita dapat mengubah CNN menjadi sistem deteksi objek yang tidak hanya mengklasifikasikan gambar tetapi juga dapat menemukan setiap objek dalam gambar dan prediksi labelnya. Anda bisa membayangkan tugas seperti itu mewakili kendaraan dasar yang bis menyetir sendiri. Kita akan melihat teknologi canggih yang disebut SSD tugas penglihatan komputer yang sangat populer yang memanfaatkan CNN’S disebut transfer gaya neuros. Disinilah anda ambil satu gambar yang disebut gambar konten dan gambar lain disebut gambar gaya dan anda mentransfer ini untuk membuat gambar yang sama sekali baru, seolah – olah anda meminjam seorang pelukis untuk melukis konten gambar pertama dengan gaya lain tidak seperti pelukis manusia.
+\end{enumerate}
 
 
 \section{Jaringan saraf convolutional canggih}
@@ -59,3 +29,8 @@ Hal-hal atau solusi yang diperlukan antara lain :
 \item menggunakan sotfware yang kita mengerti dan kita pahami 
 \end {enumerate}
 
+\begin{enumerate}
+\item Dengarkan semua orang dan selamat kembali ke kelas ini jaringan saraf konvolutional canggih dalam kuliah ini saya akan membahas dimana mendapatkan kode untuk kursus ini. Jadi seperti biasa kode dalam kursus ini dapat di unduh dari halaman saya dapatkan, dapatkan progammer dot com slash slash machine contoh pembelajarannya. Untuk mendapatkan kunci tersebut, cobalah untuk mencoba dan menempelkan dari halaman web itu sendiri. Cukup gunakan perintah dapatkan clone lalu buat semua folder yang relevan untuk kursus ini juga kelas CNN.
+\item Saya akan mendukung untuk tidak memalsukan repo karena hal ini mempersulit untuk mendapatkan persetujuan dan saya membantah repo cukup banyak terus menerus sehingga anda tidak ingin terjebak dengan versi lama. Selanjutnya jika anda sudah mengambil salah satu kelas saya dan anda sudah memiliki repo ini cukup ketik tarik dan anda secara otomatis memiliki kode untuk data dalam kursus ini.
+\item Disetiap bagian dari kursus umumnya akan melihat data set yang berbeda akan menunjukkan dimana untuk mendapatkan data didua tempat, baik dalam kuliah dan dalam kode. Jika anda tidak perlu mengetik apapun yang anda bangkitkan dengan tangan. Perhatikan bahwa dalam kasus dimana kita tidak memerlukan set data besar , tetapi hanya beberapa gambar yang akan dimasukkan dalam laporan itu sendiri. Dalam beberapa kasus , kode nakan sangat baru sehingga anda belum pernah melihatnya sebelumnya.
+\end{enumerate}
