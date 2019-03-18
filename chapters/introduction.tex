@@ -114,6 +114,19 @@ Kali ini kita akan melakukan contoh klasifikasi terhadap data Fashion MNIST. Fas
 
 Tiap kategori terdiri dari 6.000 images untuk training dan 1.000 images untuk testing. Jadi total untuk training data ada 60.000 images dan 10.000 untuk testing data.
 
+\subsection{Dependency}
+Dependency yang dibutuhkan pada contoh autoencoder kali ini hampir sama dengan contoh pada part-part sebelumnya. Hanya saja kali ini kita akan load MNIST data dari package yang sudah disediakan oleh Keras. Kita juga mau coba optimizers baru yaitu ADAM.
+
+ADAM adalah variant dari algoritma gradient descent yang lain, untuk lebih jelasnya mungkin bisa dibaca sendiri di paper 
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/Dependency.JPG}
+	\caption{contoh dependency}
+	\label{labelgambar}
+\end{figure}
+
+\subsection{Data Preparation}
+Data dari MNIST ini adalah grayscale image dengan range dari 0 hingga 255. Range data seperti ini “terlalu besar” untuk model kita, apalagi dengan learning rate yang cukup kecil, sehingga kita perlu melakukan scaling dengan membaginya dengan 255. Sehingga kita dapatkan range data baru antara 0 dan 1.
+
 
 
 
