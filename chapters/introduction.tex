@@ -112,8 +112,26 @@ Kali ini kita akan melakukan contoh klasifikasi terhadap data Fashion MNIST. Fas
 \end{enumerate}
 
 Tiap kategori terdiri dari 6.000 images untuk training dan 1.000 images untuk testing. Jadi total untuk training data ada 60.000 images dan 10.000 untuk testing data.
+ 
 
-Halo kembali lagi di materi jaringan Saraf Convolutional canggih, dalam kesempatan ini kita akan melihat bagaimana sebuah kode dapat digunakan untuk menerapkan CNN dan karies dengan menggunakan metode data amneris. Apa yang akan dipelajari adalah betapa mudahnya kode tersebut dapat membaca dokumentasi Cairnes selama beberapa menit. Jadi strategi dalam membuat data jaringan saraf pada dasarnya hanya mendeklarasikan daftar surat yang ingin dipelajari dengan jaringan yang hanya satu baris dan kemudian plot biaya dan metrik lainya, namun ini semua terlihat mudah karena hanya sebuah penjelasan. Sebelum memulai pembelajaraan ini, kita dapat melihat fashion yang tinggi di repo, seperti yang kita lihat diatas ada beberapa impor seperti jenis model yang kita inginkan secara berurutan dan semua jenis model yang diperlukan. Sebelumnya kami telah mempelajari semua jenis yang ada dimasa lalu sehingga kami dapat menemukan ide dan menggunakan untuk jenis model yang digunakan sekarang. Kami memiliki indikator untuk menentukan target yang berupa daftar indeks sehingga menjadi satu kesatuan yang berfungsi untuk mengategorikan data tersebut. jika pada dasarnya anda bisa menyalin kode apapun dari pembelajaraan sebelumnya yang dimuat dalam data yang sama yang akan dilakukan Karin. Untuk melakukan validasi split kereta. Tetapi disini saya mengacak-acak data untuk berjaga-jaga. Ingatlah bahwa kami ingin data berada dalam bentuk dan ketinggian dengan warna. Jadi kami membentuk ulang menjadi minus satu pada 28 satu. Karena gambar berukuran 28 x 28 dan skala abu-abu, kami juga ingin piksel gambar kami dinormalisasi sehingga kami membagi semuanya dengan 255 dan seperti halnya amnesti asli untuk mengatur label pada kolom pertama. Jadi X adalah segalanya mulai dari kolom 1 dan seterusnya. Dan mengapa semuanya ada di kolom 0. Selanjutnya kita mendapatkan K yang merupakan jumlah kelas dan pada baris berikutnya kita mengubah y menjadi matriks indikator sehingga kita dapat menggunakannya dalam cara yang sama dibagian kode selanjutnya. 
+
+\subsection{Dependency}
+Dependency yang dibutuhkan pada contoh autoencoder kali ini hampir sama dengan contoh pada part-part sebelumnya. Hanya saja kali ini kita akan load MNIST data dari package yang sudah disediakan oleh Keras. Kita juga mau coba optimizers baru yaitu ADAM.
+
+ADAM adalah variant dari algoritma gradient descent yang lain, untuk lebih jelasnya mungkin bisa dibaca sendiri di paper 
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/Dependency.JPG}
+	\caption{contoh dependency}
+	\label{labelgambar}
+\end{figure}
+
+\subsection{Data Preparation}
+Data dari MNIST ini adalah grayscale image dengan range dari 0 hingga 255. Range data seperti ini “terlalu besar” untuk model kita, apalagi dengan learning rate yang cukup kecil, sehingga kita perlu melakukan scaling dengan membaginya dengan 255. Sehingga kita dapatkan range data baru antara 0 dan 1.
+
+
+\section{Pengulasan tentang kode CNN}
+Halo kembali lagi di materi jaringan Saraf Convolutional canggih, dalam kesempatan ini kita akan melihat bagaimana sebuah kode dapat digunakan untuk menerapkan CNN dan karies dengan menggunakan metode data amneris. Apa yang akan dipelajari adalah betapa mudahnya kode tersebut dapat membaca dokumentasi Cairnes selama beberapa menit. Jadi strategi dalam membuat data jaringan saraf pada dasarnya hanya mendeklarasikan daftar surat yang ingin dipelajari dengan jaringan yang hanya satu baris dan kemudian plot biaya dan metrik lainya, namun ini semua terlihat mudah karena hanya sebuah penjelasan. Sebelum memulai pembelajaraan ini, kita dapat melihat fashion yang tinggi di repo, seperti yang kita lihat diatas ada beberapa impor seperti jenis model yang kita inginkan secara berurutan dan semua jenis model yang diperlukan. Sebelumnya kami telah mempelajari semua jenis yang ada dimasa lalu sehingga kami dapat menemukan ide dan menggunakan untuk jenis model yang digunakan sekarang. Kami memiliki indikator untuk menentukan target yang berupa daftar indeks sehingga menjadi satu kesatuan yang berfungsi untuk mengategorikan data tersebut. jika pada dasarnya anda bisa menyalin kode apapun dari pembelajaraan sebelumnya yang dimuat dalam data yang sama yang akan dilakukan Karin. Untuk melakukan validasi split kereta. Tetapi disini saya mengacak-acak data untuk berjaga-jaga. Ingatlah bahwa kami ingin data berada dalam bentuk dan ketinggian dengan warna. Jadi kami membentuk ulang menjadi minus satu pada 28 satu. Karena gambar berukuran 28 x 28 dan skala abu-abu, kami juga ingin piksel gambar kami dinormalisasi sehingga kami membagi semuanya dengan 255 dan seperti halnya amnesti asli untuk mengatur label pada kolom pertama. Jadi X adalah segalanya mulai dari kolom 1 dan seterusnya. Dan mengapa semuanya ada di kolom 0. Selanjutnya kita mendapatkan K yang merupakan jumlah kelas dan pada baris berikutnya kita mengubah y menjadi matriks indikator sehingga kita dapat menggunakannya dalam cara yang sama dibagian kode selanjutnya.
+
 
 
 
