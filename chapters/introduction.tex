@@ -137,21 +137,23 @@ Halo kembali lagi di materi jaringan Saraf Convolutional canggih, dalam kesempat
 Convolutional Neural Network (CNN) adalah salah satu jenis neural network yang biasa digunakan pada data image. CNN bisa digunakan untuk mendeteksi dan mengenali object pada sebuah image.
 Secara garis besar CNN tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, biasa dan activation function seperti yang sudah kita pelajari pada part sebelumnya. Lalu apa yang membedakan? Arsitektur dari CNN dibagi menjadi 2 bagian besar:
 Feature Extraction Layer dan Fully-Connected Layer (MLP).
+(pada gambar \ref{labelgambar1} )
 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/FeatureExtractionLayer.PNG}
 	\caption{Contoh FEL}
-	\label{labelgambar}
+	\label{labelgambar1}
 \end{figure}
 
 \section{Feature Extraction Layer}
 Saya gunakan istilah ini karena proses yang terjadi pada bagian ini adalah melakukan “encoding” dari sebuah image menjadi features yang berupa angka-angka yang merepresentasikan image tersebut (Feature Extraction).
 Feature extraction layer terdiri dari dua bagian. Convolutional Layer dan Pooling Layer. Namun kadang ada beberapa riset/paper yang tidak menggunakan pooling.
+(pada gambar \ref{labelgambar2} )
 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/ConvolutionalLayer.PNG}
 	\caption{Contoh CL}
-	\label{labelgambar}
+	\label{labelgambar2}
 \end{figure}
 
 \section{Convolutional Layer}
