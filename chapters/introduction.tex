@@ -135,29 +135,27 @@ Halo kembali lagi di materi jaringan Saraf Convolutional canggih, dalam kesempat
 
 \section{Convolutional Neural Network}
 Convolutional Neural Network (CNN) adalah salah satu jenis neural network yang biasa digunakan pada data image. CNN bisa digunakan untuk mendeteksi dan mengenali object pada sebuah image.
-Secara garis besar CNN tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, biasa dan activation function seperti yang sudah kita pelajari pada part sebelumnya. Lalu apa yang membedakan? Arsitektur dari CNN dibagi menjadi 2 bagian besar:
-Feature Extraction Layer dan Fully-Connected Layer (MLP).
-(pada gambar \ref{labelgambar1} )
 
+Secara garis besar CNN tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, biasa dan activation function seperti yang sudah kita pelajari pada part sebelumnya. Lalu apa yang membedakan? Arsitektur dari CNN dibagi menjadi 2 bagian besar, Feature Extraction Layer dan Fully-Connected Layer (MLP) 
+
+\section{Feature Extraction Layer}
+Saya gunakan istilah ini karena proses yang terjadi pada bagian ini adalah melakukan “encoding” dari sebuah image menjadi features yang berupa angka-angka yang merepresentasikan image tersebut (Feature Extraction).
+
+Feature extraction layer terdiri dari dua bagian. Convolutional Layer dan Pooling Layer. Namun kadang ada beberapa riset/paper yang tidak menggunakan pooling(pada gambar \ref{labelgambar1} ).
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/FeatureExtractionLayer.PNG}
 	\caption{Contoh FEL}
 	\label{labelgambar1}
 \end{figure}
 
-\section{Feature Extraction Layer}
-Saya gunakan istilah ini karena proses yang terjadi pada bagian ini adalah melakukan “encoding” dari sebuah image menjadi features yang berupa angka-angka yang merepresentasikan image tersebut (Feature Extraction).
-Feature extraction layer terdiri dari dua bagian. Convolutional Layer dan Pooling Layer. Namun kadang ada beberapa riset/paper yang tidak menggunakan pooling.
-(pada gambar \ref{labelgambar2} )
+\section{Convolutional Layer}
+ Gambar \ref{labelgambar2} adalah RGB (Red, Green, Blue) image berukuran 32x32 pixels yang sebenarnya adalah multidimensional array dengan ukuran 32x32x3 (3 adalah jumlah channel).
+Convolutional layer terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels). Sebagai contoh, layer pertama pada feature extraction layer biasanya adalah conv. layer dengan ukuran 5x5x3. Panjang 5 pixels, tinggi 5 pixels dan tebal/jumlah 3 buah sesuai dengan channel dari image tersebut.
+Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran akan dilakukan operasi “dot” antara input dan nilai dari filter tersebut sehingga menghasilkan sebuah output atau biasa disebut sebagai activation map atau feature map
 
+ 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/ConvolutionalLayer.PNG}
 	\caption{Contoh CL}
 	\label{labelgambar2}
 \end{figure}
-
-\section{Convolutional Layer}
-Gambar diatas adalah RGB (Red, Green, Blue) image berukuran 32x32 pixels yang sebenarnya adalah multidimensional array dengan ukuran 32x32x3 (3 adalah jumlah channel).
-Convolutional layer terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels). Sebagai contoh, layer pertama pada feature extraction layer biasanya adalah conv. layer dengan ukuran 5x5x3. Panjang 5 pixels, tinggi 5 pixels dan tebal/jumlah 3 buah sesuai dengan channel dari image tersebut.
-Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran akan dilakukan operasi “dot” antara input dan nilai dari filter tersebut sehingga menghasilkan sebuah output atau biasa disebut sebagai activation map atau feature map.
- 
