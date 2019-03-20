@@ -140,9 +140,15 @@ Halo kembali lagi di materi jaringan Saraf Convolutional canggih, dalam kesempat
 
 Gambar diatas adalah arsitektur dari VGG16 (16 Layer). Yang akan kita gunakan adalah Feature Extraction Layer saja, tentu saja dengan weights yang dapat kita download. Weights nya berupa file .h5 seperti yang sudah kita gunakan sebelumnya.
 
-FC layer pada VGG16 terdiri dari 4096–4096–4096 neuron pada hidden layer dan 1000 neuron pada output layer karena ImageNet mempunyai 1000 classs. Sedangkan dataset kita hanya mempunyai 2 class (Male/Female), sehingga kita harus membuat FC layer versi kita sendiri. ( pada gambar \ref{labelgambar1}
+FC layer pada VGG16 terdiri dari 4096–4096–4096 neuron pada hidden layer dan 1000 neuron pada output layer karena ImageNet mempunyai 1000 classs. Sedangkan dataset kita hanya mempunyai 2 class (Male/Female), sehingga kita harus membuat FC layer versi kita sendiri.
+
+Kita akan menggunakan FC Layer yaitu 32 neuron pada hidden layer dan 1 neuron pada output dengan sigmoid activation. ( pada gambar \ref{labelgambar1} )
 
 \textbf{VGG-16 Dependiencies and variable} 
+
+namun pada hal ini kita membutuhkan package applications untuk dapat menggunakan VGG16.
+
+gambar dibawah adalah salah satu contoh source code pada package applications dari VGG-16 Dependiencies and variable.
 ( pada gambar \ref{labelgambar2} )
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/vgg1.jpeg}
@@ -151,6 +157,8 @@ FC layer pada VGG16 terdiri dari 4096–4096–4096 neuron pada hidden layer dan
 \end{figure}
 
 \textbf{VGG-16 Model and Data Augmentation}
+
+gambar dibawah adalah salah satu contoh source code pada package applications dari VGG-16 Model and Data Augmentation.
 ( pada gambar \ref{labelgambar3} )
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/vgg2.JPG}
@@ -158,7 +166,11 @@ FC layer pada VGG16 terdiri dari 4096–4096–4096 neuron pada hidden layer dan
 	\label{labelgambar3}
 \end{figure}
 
-Argument include top sama dengan False diatas menandakan jika kita tidak menggunakan FC Layer dari VGG-16. Sehingga jika kita melakukan “predict” untuk model ini maka yang akan terjadi adalah dataset akan mengalir pada feature extraction layer dari VGG-16. Hasilnya adalah feature map yang bisa kita simpan pada file train features.npy dan val features.npy yang nantinya bisa kita flatten dan kita gunakan untuk melakukan training pada FC Layer versi kita sendiri.
+Dengan menggunakan package applications kita bisa langsung menggunakan VGG-16 tanpa harus menyusunnya layer demi layer dan mendownload weights nya.
+
+Argument include top sama dengan False diatas menandakan jika kita tidak menggunakan FC Layer dari VGG-16. Sehingga jika kita melakukan “predict” untuk model ini maka yang akan terjadi adalah dataset akan mengalir pada feature extraction layer dari VGG-16. 
+
+Hasilnya adalah feature map yang bisa kita simpan pada file train features.npy dan val features.npy yang nantinya bisa kita flatten dan kita gunakan untuk melakukan training pada FC Layer versi kita sendiri.
 
 
 
