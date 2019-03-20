@@ -198,3 +198,10 @@ Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran a
 	\caption{Contoh CL}
 	\label{labelgambar2}
 \end{figure}
+
+\section{Transfer Learning}
+Transfer learning adalah suatu teknik atau metode yang memanfaatkan model yang sudah dilatih terhadap suatu dataset untuk menyelesaikan permasalahan lain yang serupa dengan cara menggunakannya sebagai starting point, memodifikasi dan mengupdate parameternya sehingga sesuai dengan dataset yang baru.
+
+Kita akan gunakan model VGG-16 yang sudah dilatih pada data ImageNet dengan cara membuat arsitektur yang identik dengan VGG-16 tetapi tanpa fully-connected layer dan mendownload weights nya. Dengan menyediakan beberapa model ImageNet yang populer untuk bisa kita gunakan.
+
+Seluruh weight VGG-16 telah dilatih menggunakan dataset ImageNet dan sudah dapat mengenali warna, tekstur, dll. Sehingga kita bisa manfaatkan ini untuk meng-extract feature dari semua foto pada dataset kita.
