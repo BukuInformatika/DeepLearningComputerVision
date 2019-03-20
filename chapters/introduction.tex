@@ -153,9 +153,41 @@ Feature extraction layer terdiri dari dua bagian. Convolutional Layer dan Poolin
 Convolutional layer terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels). Sebagai contoh, layer pertama pada feature extraction layer biasanya adalah conv. layer dengan ukuran 5x5x3. Panjang 5 pixels, tinggi 5 pixels dan tebal/jumlah 3 buah sesuai dengan channel dari image tersebut.
 Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran akan dilakukan operasi “dot” antara input dan nilai dari filter tersebut sehingga menghasilkan sebuah output atau biasa disebut sebagai activation map atau feature map
 
- 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/ConvolutionalLayer.PNG}
 	\caption{Contoh CL}
 	\label{labelgambar2}
 \end{figure}
+
+
+
+
+
+\section{Training with TensorBoard Visualization}
+Kita akan menggunakan TensorBoard untuk melakukan visualisasi pada saat training. Seluruh training loss/accuracy dan validation loss/accuracy akan disimpan dan kita bisa melihat grafiknya.
+
+Untuk menggunakan TensorBoard kita bisa gunakan command sebagai berikut :
+tensorboard   logdir = Graph
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/TensorBoardVisualization.PNG}
+	\caption{Contoh TBV}
+	\label{labelgambar3}
+\end{figure}
+
+\section{Comparing Two Model}
+Dengan menggunakan TensorBoard, kita juga bisa membandingkan performa kedua model yang telah kita train.
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/ComparingTwoModel.PNG}
+	\caption{Contoh CTM}
+	\label{labelgambar4}
+\end{figure}
+
+Grafik warna biru diatas adalah grafik dari model kedua yang menggunakan conv. layer yang lebih banyak. Bisa dilihat disitu kalau performa dari model ini jelas lebih bagus daripada model pertama.
+
+Training dan Validation Loss yang didapatkan adalah 0.1521 dan 0.2571, sedangkan Training dan Validation Accuracy sebesar 94.46% dan 91.28%.
+
+Sebenarnya kedua model ini masih bisa dioptimasi lagi, bisa dicoba pake learning rate yang lebih tinggi misalnya 0.001, tapi epoch lebih kecil lagi atau setting jumlah neuron pada FC Layer dan masih banyak lagi untuk improve performa dari model kita.
+
+
+
+
