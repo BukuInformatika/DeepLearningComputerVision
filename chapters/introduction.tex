@@ -192,12 +192,41 @@ Feature extraction layer terdiri dari dua bagian. Convolutional Layer dan Poolin
 Convolutional layer terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels). Sebagai contoh, layer pertama pada feature extraction layer biasanya adalah conv. layer dengan ukuran 5x5x3. Panjang 5 pixels, tinggi 5 pixels dan tebal/jumlah 3 buah sesuai dengan channel dari image tersebut.
 Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran akan dilakukan operasi “dot” antara input dan nilai dari filter tersebut sehingga menghasilkan sebuah output atau biasa disebut sebagai activation map atau feature map
 
- 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/ConvolutionalLayer.PNG}
 	\caption{Contoh CL}
 	\label{labelgambar2}
 \end{figure}
+
+
+
+\section{Training with TensorBoard Visualization}
+Kita akan menggunakan TensorBoard untuk melakukan visualisasi pada saat training. Seluruh training loss/accuracy dan validation loss/accuracy akan disimpan dan kita bisa melihat grafiknya.
+
+Untuk menggunakan TensorBoard kita bisa gunakan command sebagai berikut :
+tensorboard   logdir = Graph
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/TensorBoardVisualization.PNG}
+	\caption{Contoh TBV}
+	\label{labelgambar3}
+\end{figure}
+
+\section{Comparing Two Model}
+Dengan menggunakan TensorBoard, kita juga bisa membandingkan performa kedua model yang telah kita train.
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/ComparingTwoModel.PNG}
+	\caption{Contoh CTM}
+	\label{labelgambar4}
+\end{figure}
+
+Grafik warna biru diatas adalah grafik dari model kedua yang menggunakan conv. layer yang lebih banyak. Bisa dilihat disitu kalau performa dari model ini jelas lebih bagus daripada model pertama.
+
+Training dan Validation Loss yang didapatkan adalah 0.1521 dan 0.2571, sedangkan Training dan Validation Accuracy sebesar 94.46 persen dan 91.28 persen.
+
+Sebenarnya kedua model ini masih bisa dioptimasi lagi, bisa dicoba pake learning rate yang lebih tinggi misalnya 0.001, tapi epoch lebih kecil lagi atau setting jumlah neuron pada FC Layer dan masih banyak lagi untuk improve performa dari model kita.
+
+
+
 
 \section{Transfer Learning}
 Transfer learning adalah suatu teknik atau metode yang memanfaatkan model yang sudah dilatih terhadap suatu dataset untuk menyelesaikan permasalahan lain yang serupa dengan cara menggunakannya sebagai starting point, memodifikasi dan mengupdate parameternya sehingga sesuai dengan dataset yang baru.
@@ -205,3 +234,16 @@ Transfer learning adalah suatu teknik atau metode yang memanfaatkan model yang s
 Kita akan gunakan model VGG-16 yang sudah dilatih pada data ImageNet dengan cara membuat arsitektur yang identik dengan VGG-16 tetapi tanpa fully-connected layer dan mendownload weights nya. Dengan menyediakan beberapa model ImageNet yang populer untuk bisa kita gunakan.
 
 Seluruh weight VGG-16 telah dilatih menggunakan dataset ImageNet dan sudah dapat mengenali warna, tekstur, dll. Sehingga kita bisa manfaatkan ini untuk meng-extract feature dari semua foto pada dataset kita.
+
+
+
+\section{Deeper Network}
+Kita bisa gunakan arsitektur yang lebih “deep” dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
+
+Model kedua yang akan kita coba menggunakan ukuran filter yang sama yaitu 5x5 dan 3x3, namun kita gunakan stride yang lebih kecil dan kita melakukan dua kali downsampling.
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/DeeperNetwork.PNG}
+	\caption{Contoh DN}
+	\label{labelgambar5}
+\end{figure}
+
