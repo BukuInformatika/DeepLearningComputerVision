@@ -198,7 +198,6 @@ Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran a
 	\label{labelgambar2}
 \end{figure}
 
-<<<<<<< HEAD
 
 
 \section{Training with TensorBoard Visualization}
@@ -229,11 +228,22 @@ Sebenarnya kedua model ini masih bisa dioptimasi lagi, bisa dicoba pake learning
 
 
 
-=======
 \section{Transfer Learning}
 Transfer learning adalah suatu teknik atau metode yang memanfaatkan model yang sudah dilatih terhadap suatu dataset untuk menyelesaikan permasalahan lain yang serupa dengan cara menggunakannya sebagai starting point, memodifikasi dan mengupdate parameternya sehingga sesuai dengan dataset yang baru.
 
 Kita akan gunakan model VGG-16 yang sudah dilatih pada data ImageNet dengan cara membuat arsitektur yang identik dengan VGG-16 tetapi tanpa fully-connected layer dan mendownload weights nya. Dengan menyediakan beberapa model ImageNet yang populer untuk bisa kita gunakan.
 
 Seluruh weight VGG-16 telah dilatih menggunakan dataset ImageNet dan sudah dapat mengenali warna, tekstur, dll. Sehingga kita bisa manfaatkan ini untuk meng-extract feature dari semua foto pada dataset kita.
->>>>>>> 2a6874d3e8c4a59a1cc9d9d4bff71bfd49cf7e65
+
+
+
+\section{Deeper Network}
+Kita bisa gunakan arsitektur yang lebih “deep” dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
+
+Model kedua yang akan kita coba menggunakan ukuran filter yang sama yaitu 5x5 dan 3x3, namun kita gunakan stride yang lebih kecil dan kita melakukan dua kali downsampling.
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/DeeperNetwork.PNG}
+	\caption{Contoh DN}
+	\label{labelgambar5}
+\end{figure}
+
