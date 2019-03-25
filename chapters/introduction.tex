@@ -204,7 +204,8 @@ Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran a
 Kita akan menggunakan TensorBoard untuk melakukan visualisasi pada saat training. Seluruh training loss/accuracy dan validation loss/accuracy akan disimpan dan kita bisa melihat grafiknya.
 
 Untuk menggunakan TensorBoard kita bisa gunakan command sebagai berikut :
-tensorboard   logdir = Graph
+\lstinputlisting[caption=Contoh TBV,label={lst:gambar3}]{src/tensorboard.py}
+
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/TensorBoardVisualization.PNG}
 	\caption{Contoh TBV}
@@ -261,9 +262,10 @@ Sebenarnya ImageNet challenge ini sudah dimulai sejak 2010, saya kurang paham al
 Seiring dengan perkembangan teknologi tiap tahun, jumlah layer yang digunakan juga mengalami kenaikan yang hasilnya bisa dibilang setara dengan tingkat akurasi yang dihasilkan.
 
 \section{Deeper Network}
-Kita bisa gunakan arsitektur yang lebih “deep” dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
+Kita bisa gunakan arsitektur yang lebih \textit{deep} dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
 
 Model kedua yang akan kita coba menggunakan ukuran filter yang sama yaitu 5x5 dan 3x3, namun kita gunakan stride yang lebih kecil dan kita melakukan dua kali downsampling.
+
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/DeeperNetwork.PNG}
 	\caption{Contoh DN}
