@@ -204,7 +204,8 @@ Ketiga filter ini akan digeser keseluruh bagian dari gambar. Setiap pergeseran a
 Kita akan menggunakan TensorBoard untuk melakukan visualisasi pada saat training. Seluruh training loss/accuracy dan validation loss/accuracy akan disimpan dan kita bisa melihat grafiknya.
 
 Untuk menggunakan TensorBoard kita bisa gunakan command sebagai berikut :
-tensorboard   logdir=Graph
+\lstinputlisting[caption=Contoh TBV,label={lst:gambar3}]{src/tensorboard.py}
+
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/TensorBoardVisualization.PNG}
 	\caption{Contoh TBV}
@@ -235,7 +236,30 @@ Kita akan gunakan model VGG-16 yang sudah dilatih pada data ImageNet dengan cara
 
 Seluruh weight VGG-16 telah dilatih menggunakan dataset ImageNet dan sudah dapat mengenali warna, tekstur, dll. Sehingga kita bisa manfaatkan ini untuk meng-extract feature dari semua foto pada dataset kita.
 
+\subsection{Transfer Learning Result}
 
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/Transfer.PNG}
+	\caption{Transfer learning}
+	\label{Transfer Learning}
+\end{figure}
+
+Setelah 50 epoch training-testing, kita mendapatkan loss dan accuracy sebesar 0.2985 crossentropy loss dan 90.44 persen accuracy ( pada gambar \ref{Transfer Learning} ) .
+
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/Grafik.PNG}
+	\caption{Grafik Learning}
+	\label{Grafik}
+\end{figure}
+
+Namun jika dilihat dari grafiknya, masih terjadi overfitting. Kita bisa tangani ini dengan cara menggunakan FC Layer yang lebih sederhana, menggunakan Dropout, melakukan augmentasi yang lebih agresif lagi atau menambah jumlah data ( pada gambar \ref{Grafik} ) .
+
+\subsection{ImageNet}
+ImageNet adalah sebuah dataset yang terdiri dari 1.200.000 gambar untuk training dan 100.000 untuk testing. Dataset ini terdiri dari 1000 classes jadi untuk setiap class ada 1.200 gambar.
+
+Sebenarnya ImageNet challenge ini sudah dimulai sejak 2010, saya kurang paham algoritma dan model apa yang digunakan pada rentang 2010–2011. Namun hasil yang paling standout adalah AlexNet pada 2012. AlexNet adalah model pertama yang menggunakan Convolutional Neural Network (CNN). 
+
+Seiring dengan perkembangan teknologi tiap tahun, jumlah layer yang digunakan juga mengalami kenaikan yang hasilnya bisa dibilang setara dengan tingkat akurasi yang dihasilkan.
 
 \section{Deeper Network}
 Kita bisa gunakan arsitektur yang lebih \textit{deep} dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
