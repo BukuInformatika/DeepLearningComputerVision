@@ -272,3 +272,13 @@ Model kedua yang akan kita coba menggunakan ukuran filter yang sama yaitu 5x5 da
 	\label{labelgambar5}
 \end{figure}
 
+
+\section{Padding}
+Padding atau Zero Padding adalah parameter yang menentukan jumlah pixels (berisi nilai 0) yang akan ditambahkan di setiap sisi dari input. Hal ini digunakan dengan tujuan untuk memanipulasi dimensi output dari conv. layer (Feature Map).
+
+Tujuan dari penggunaan padding adalah :
+\begin{enumerate}
+\item Dimensi output dari convolutional layer selalu lebih kecil dari inputnya. Output ini akan digunakan kembali sebagai input dari convolutional layer selanjutnya, sehingga makin banyak informasi yang terbuang. Dengan menggunakan padding, kita dapat mengatur dimensi output agar tetap sama seperti dimensi input atau setidaknya tidak berkurang secara drastis.
+
+\item Meningkatkan performa dari model karena convolutional filter akan fokus pada informasi yang sebenarnya yaitu yang berada diantara zero padding tersebut, Sehingga kita bisa menggunakan convolutional layer yang lebih dalam sehingga lebih banyak features yang berhasil di extract.
+\end{enumerate}
