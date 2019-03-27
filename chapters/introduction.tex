@@ -262,7 +262,6 @@ Sebenarnya ImageNet challenge ini sudah dimulai sejak 2010, saya kurang paham al
 Seiring dengan perkembangan teknologi tiap tahun, jumlah layer yang digunakan juga mengalami kenaikan yang hasilnya bisa dibilang setara dengan tingkat akurasi yang dihasilkan.
 
 \subsection{Data Augmentation}
-( Pada gambar \ref {Augmentation} )
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/Augmentation.PNG}
 	\caption{Data Augmentation}
@@ -273,17 +272,17 @@ Seperti yang sudah kita ketahui, untuk mendapatkan performa yang optimal, Deep L
 
 Dari dataset yang telah kita kumpulkan hanya terdapat 400 foto pria dan 400 foto wanita. Jumlah data tersebut masih kurang mencukupi untuk mendapatkan performa yang optimal.
 
-Untuk itu kita perlu meng-augmentasi data tersebut. Data Augmentation adalah sebuah teknik memanipulasi sebuah data tanpa kehilangan inti atau esensi dari data tersebut. Untuk data berupa Image, kita bisa lakukan rotate, flip, crop, dll.
+Untuk itu kita perlu meng-augmentasi data tersebut. Data Augmentation adalah sebuah teknik memanipulasi sebuah data tanpa kehilangan inti atau esensi dari data tersebut. Untuk data berupa Image, kita bisa lakukan rotate, flip, crop, dll ( Pada gambar \ref {Augmentation} ).
 
 \begin{figure}[!htp]
 	\includegraphics[width=0.75\textwidth]{figures/Contoh.PNG}
-	\caption{Contoh}
-	\label{Contoh}
+	\caption{Source Code Augmentation}
+	\label{Source Code Augmentation}
 \end{figure}
 
 Pada percobaan kita kali ini, kita akan melakukan shear, zoom dan flip sedangkan parameter rescale yang kita gunakan adalah membagi nilai RGB dari 0–255 dengan 255, sehingga kita mendapatkan nilai RGB pada rentang 0–1. Untuk data testing kita hanya melakukan rescale saja.
 
-Method flow from directory dari ImageDataGenerator kita gunakan untuk mengubah data yang berupa “raw image” menjadi sebuah dataset yang akan kita gunakan untuk training dan testing, tentu saja dataset yang telah kita augmentasi tadi  ( Pada gambar \ref{Contoh} ).
+Method flow from directory dari ImageDataGenerator kita gunakan untuk mengubah data yang berupa “raw image” menjadi sebuah dataset yang akan kita gunakan untuk training dan testing, tentu saja dataset yang telah kita augmentasi tadi  ( Pada gambar \ref{Source Code Augmentation} ).
 
 \section{Deeper Network}
 Kita bisa gunakan arsitektur yang lebih \textit{deep} dengan menambahkan conv. layer. Tapi yang patut diperhatikan adalah semakin deep arsitektur yang kita gunakan semakin lama proses training karena semakin banyak parameter yang harus diupdate. Arsitektur yang seperti ini juga rawan terjadi overfitting.
