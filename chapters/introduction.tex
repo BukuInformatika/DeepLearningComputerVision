@@ -306,3 +306,8 @@ Tujuan dari penggunaan padding adalah :
 
 \item Meningkatkan performa dari model karena convolutional filter akan fokus pada informasi yang sebenarnya yaitu yang berada diantara zero padding tersebut, Sehingga kita bisa menggunakan convolutional layer yang lebih dalam sehingga lebih banyak features yang berhasil di extract.
 \end{enumerate}
+
+\section{Stride}
+Stride adalah parameter yang menentukan berapa jumlah pergeseran filter. Jika nilai stride adalah 1, maka conv. filter akan bergeser sebanyak 1 pixels secara horizontal lalu vertical.
+
+Semakin kecil stride maka akan semakin detail informasi yang kita dapatkan dari sebuah input, namun membutuhkan komputasi yang lebih jika dibandingkan dengan stride yang besar. Namun perlu diperhatikan bahwa dengan menggunakan stride yang kecil kita tidak selalu akan mendapatkan performa yang bagus.
