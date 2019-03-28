@@ -310,3 +310,12 @@ Tujuan dari penggunaan padding adalah :
 Stride adalah parameter yang menentukan berapa jumlah pergeseran filter. Jika nilai stride adalah 1, maka conv. filter akan bergeser sebanyak 1 pixels secara horizontal lalu vertical.
 
 Semakin kecil stride maka akan semakin detail informasi yang kita dapatkan dari sebuah input, namun membutuhkan komputasi yang lebih jika dibandingkan dengan stride yang besar. Namun perlu diperhatikan bahwa dengan menggunakan stride yang kecil kita tidak selalu akan mendapatkan performa yang bagus.
+
+
+\section{KorNet}
+Arsitektur sederhana kita ini terdiri dari 87.969 buah parameter yang akan diupdate pada saat training. Pada feature extraction layer terdapat 4 Convolution Layer, ZeroPadding Layer dan MaxPooling Layer.
+
+Pada fully-connected layer terdapat 2 buah layer dengan jumlah neuron masing-masing sebanyak 32 dan 1. Perlu diingat bahwa layer terakhir adalah output layer. 1 buah layer disini karena kita akan melakukan binary classification, 0 untuk pria dan 1 untuk wanita. Sehingga activation function yang harus kita gunakan pada output layer adalah sigmoid dengan loss function binary crossentropy. Kita juga bisa menggunakan 2 neuron pada output layer, menggunakan activation function softmax dan loss function categorical crossentropy seperti pada Part-7.
+
+
+
