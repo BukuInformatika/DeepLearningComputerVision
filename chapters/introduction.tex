@@ -318,4 +318,13 @@ Arsitektur sederhana kita ini terdiri dari 87.969 buah parameter yang akan diupd
 Pada fully-connected layer terdapat 2 buah layer dengan jumlah neuron masing-masing sebanyak 32 dan 1. Perlu diingat bahwa layer terakhir adalah output layer. 1 buah layer disini karena kita akan melakukan binary classification, 0 untuk pria dan 1 untuk wanita. Sehingga activation function yang harus kita gunakan pada output layer adalah sigmoid dengan loss function binary crossentropy. Kita juga bisa menggunakan 2 neuron pada output layer, menggunakan activation function softmax dan loss function categorical crossentropy seperti pada Part-7.
 
 
+\section{Pooling Layer}
+Pooling layer biasanya berada setelah convolutional layer. Pada prinsipnya pooling layer terdiri dari sebuah filter dengan ukuran dan stride tertentu yang akan bergeser pada seluruh area feature map.
 
+Pooling yang biasa digunakan adalah Max Pooling dan Average Pooling. Sebagai contoh jika kita menggunakan Max Pooling 2x2 dengan stride 2, maka pada setiap pergeseran filter, nilai maximum pada area 2x2 pixel tersebut yang akan dipilih, sedangkan Average Pooling akan memilih nilai rata-ratanya.
+
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/PoolingLayer.PNG}
+	\caption{Contoh PL}
+	\label{labelgambar6}
+\end{figure}
