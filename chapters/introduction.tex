@@ -321,6 +321,19 @@ Pada fully-connected layer terdapat 2 buah layer dengan jumlah neuron masing-mas
 Model ResNet merupakan model yang menggunakan deep residual learning framework. Dengan menggunakan framework ini, setiap layer network memiliki referensi ke layer network sebelumnya; hal ini menjadikan proses optimasi menjadi lebih mudah daripada layer network-layer network yang tidak memiliki keterhubungan. Karena proses optimasi yang lebih mudah, neural network yang dibentuk
 dapat memiliki jumlah layer yang banyak sampai dengan 34 layer dan akibatnya, akurasi meningkat dari neural network yang tidak menggunakan residual network.
 
+
+\section{Pooling Layer}
+Pooling layer biasanya berada setelah convolutional layer. Pada prinsipnya pooling layer terdiri dari sebuah filter dengan ukuran dan stride tertentu yang akan bergeser pada seluruh area feature map.
+
+Pooling yang biasa digunakan adalah Max Pooling dan Average Pooling. Sebagai contoh jika kita menggunakan Max Pooling 2x2 dengan stride 2, maka pada setiap pergeseran filter, nilai maximum pada area 2x2 pixel tersebut yang akan dipilih, sedangkan Average Pooling akan memilih nilai rata-ratanya.
+
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/PoolingLayer.PNG}
+	\caption{Contoh PL}
+	\label{labelgambar6}
+\end{figure}
+
+
 Keuntungan dari ResNets adalah:
 
 \begin{enumerate}
