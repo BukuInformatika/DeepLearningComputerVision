@@ -317,5 +317,21 @@ Arsitektur sederhana kita ini terdiri dari 87.969 buah parameter yang akan diupd
 
 Pada fully-connected layer terdapat 2 buah layer dengan jumlah neuron masing-masing sebanyak 32 dan 1. Perlu diingat bahwa layer terakhir adalah output layer. 1 buah layer disini karena kita akan melakukan binary classification, 0 untuk pria dan 1 untuk wanita. Sehingga activation function yang harus kita gunakan pada output layer adalah sigmoid dengan loss function binary crossentropy. Kita juga bisa menggunakan 2 neuron pada output layer, menggunakan activation function softmax dan loss function categorical crossentropy seperti pada Part-7.
 
+\section{ResNet}
+Model ResNet merupakan model yang menggunakan deep residual learning framework. Dengan menggunakan framework ini, setiap layer network memiliki referensi ke layer network sebelumnya; hal ini menjadikan proses optimasi menjadi lebih mudah daripada layer network-layer network yang tidak memiliki keterhubungan. Karena proses optimasi yang lebih mudah, neural network yang dibentuk
+dapat memiliki jumlah layer yang banyak sampai dengan 34 layer dan akibatnya, akurasi meningkat dari neural network yang tidak menggunakan residual network.
 
+Keuntungan dari ResNets adalah:
 
+\begin{enumerate}
+\item kinerja tidak menurun dengan jaringan yang sangat dalam
+\item lebih murah untuk dihitung
+\item kemampuan untuk melatih jaringan yang sangat dalam
+\end{enumerate}
+
+ResNet berfungsi karena:
+
+\begin{enumerate}
+\item mengidentifikasi fungsi mudah untuk blok residual untuk dipelajari
+\item menggunakan koneksi-loncatan membantu gradien untuk kembali-menyebar dan dengan demikian membantu Anda untuk melatih jaringan yang lebih dalam
+\end{enumerate}
