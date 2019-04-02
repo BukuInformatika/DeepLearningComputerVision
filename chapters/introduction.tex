@@ -355,3 +355,9 @@ Feature map yang dihasilkan dari feature extraction layer masih berbentuk multid
 
 Fully Connected Layer yang dimaksud disini adalah MLP yang sudah pernah kita pelajari sama-sama pada bagian ke-4 dan bagian ke-5. Fully Connected Layer memiliki beberapa hidden layer, activation function, output layer dan loss function.
 
+\section{The Problem}
+Data MNIST diatas terdiri dari nilai 0–255 untuk setiap pixel yang ada. Kita bisa saja menggunakan MLP untuk melakukan klasifikasi untuk semua digit dengan hasil yang cukup baik karena sebagian besar data pada MNIST, object yang akan dikenali berada ditengah-tengah gambar.
+
+Lalu bagaima jika object yang akan dikenali tidak berada ditengah-tengah gambar? Disinilah kelemahan dari MLP. Angka 6 yang berada ditengah-tengah gambar akan berhasil dikenali, tetapi angka 6 yang berada dipojok kiri mungkin tidak akan dikenali.
+
+Kita bisa menggunakan data yang sangat banyak dengan tiap digit berada pada lokasi yang berbeda, namun ini bukan cara yang efisien untuk mengatasi permasalahan tersebut.
