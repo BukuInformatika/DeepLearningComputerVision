@@ -348,3 +348,10 @@ ResNet berfungsi karena:
 \item mengidentifikasi fungsi mudah untuk blok residual untuk dipelajari
 \item menggunakan koneksi-loncatan membantu gradien untuk kembali-menyebar dan dengan demikian membantu Anda untuk melatih jaringan yang lebih dalam
 \end{enumerate}
+
+
+\section{Fully Connected Layer} 
+Feature map yang dihasilkan dari feature extraction layer masih berbentuk multidimensional array, sehingga kita harus melakukan flatten atau reshape feature map menjadi sebuah vector agar bisa kita gunakan sebagai input dari fully connected layer.
+
+Fully Connected Layer yang dimaksud disini adalah MLP yang sudah pernah kita pelajari sama-sama pada bagian ke-4 dan bagian ke-5. Fully Connected Layer memiliki beberapa hidden layer, activation function, output layer dan loss function.
+
