@@ -361,3 +361,12 @@ Data MNIST diatas terdiri dari nilai 0–255 untuk setiap pixel yang ada. Kita b
 Lalu bagaima jika object yang akan dikenali tidak berada ditengah-tengah gambar? Disinilah kelemahan dari MLP. Angka 6 yang berada ditengah-tengah gambar akan berhasil dikenali, tetapi angka 6 yang berada dipojok kiri mungkin tidak akan dikenali.
 
 Kita bisa menggunakan data yang sangat banyak dengan tiap digit berada pada lokasi yang berbeda, namun ini bukan cara yang efisien untuk mengatasi permasalahan tersebut.
+
+\section{Inception}
+Motivasi dari jaringan awal adalah, daripada mengharuskan kita untuk memilih ukuran filter secara manual, biarkan jaringan memutuskan apa yang terbaik untuk dimasukkan ke dalam sebuah layer. Kami memberikan pilihan dan semoga akan mengambil yang terbaik untuk digunakan di lapisan itu ( pada gambar \ref{Inception} ) .
+\begin{figure}[!htp]
+	\includegraphics[width=0.75\textwidth]{figures/inception.PNG}
+	\caption{gambar Inception}
+	\label{Inception}
+\end{figure}
+
