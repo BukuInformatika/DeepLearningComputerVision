@@ -374,3 +374,8 @@ Motivasi dari jaringan awal adalah, daripada mengharuskan kita untuk memilih uku
 Pertama kita parse page tersebut dan convert HTML table menjadi CSV. Kita memiliki 115 buah data. Nanti ada 16 hero yang akan kita ambil sebagai validation dan sisanya kita gunakan sebagai training. Untuk validation data, kita ambil beberapa hero yang memiliki stats yang aneh seperti Jakiro, Winter Wyvern (Strength tinggi tapi termasuk INT hero), Phoenix, IO (Strength rendah tapi termasuk STR hero), Bloodseeker, Undying, dan lain lain.
 
 Stats yang menurut saya tidak relevan akan kita buang, seperti Day Vision, Night Vision, Collision Size, Legs. Sehingga kita punya 22 features yang akan kita gunakan untuk melakukan klasifikasi. Type hero akan kita gunakan sebagai target yang memiliki nilai 0 untuk STR, 1 untuk AGI dan 2 untuk INT.
+
+\section{Training a Neural Network}
+Pada Supervised Learning menggunakan Neural Network, pada umumnya Learning terdiri dari 2 tahap, yaitu training dan evaluation. Namun kadang terdapat tahap tambahan yaitu testing, namun sifatnya tidak wajib.
+
+Pada tahap training setiap weight dan bias pada tiap neuron akan diupdate terus menerus hingga output yang dihasilkan sesuai dengan harapan. Pada tiap iterasi akan dilakukan proses evaluation yang biasanya digunakan untuk menentukan kapan harus menghentikan proses training (stopping point).
