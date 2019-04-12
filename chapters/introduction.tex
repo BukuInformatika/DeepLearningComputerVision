@@ -394,3 +394,9 @@ Neural network adalah model yang terinspirasi oleh bagaimana neuron dalam otak m
 Autoencoder adalah model neural network yang memiliki input dan output yang sama. Autoencoder mempelajari data input dan berusaha untuk melakukan rekonstruksi terhadap data input tersebut.
 
 Lalu apa gunanya Autoencoder? Autoencoder biasa digunakan untuk mengurangi dimensi dari features atau Dimensionality Reduction. Jika kita mempunyai data yang mempunyai dimensi yang sangat tinggi atau data dengan jumlah features yang sangat banyak bisa jadi tiap features yang ada tersebar pada setiap dimensi dari data sehingga setiap data yang ada terlihat sangat berbeda. Untuk mengatasi masalah tersebut kita membutuhkan data yang sangat banyak atau mengurangi dimensi data tersebut. Kita bisa menggunakan PCA, t-SNE ataupun Autoencoder.
+
+
+\section{Weight and Bias}
+Setiap neuron pada MLP saling berhubungan yang ditandai dengan tanda panah pada gambar diatas. Tiap koneksi memiliki weight yang nantinya nilai dari tiap weight akan berbeda-beda. Hidden layer dan output layer memiliki tambahan input yang biasa disebut dengan bias.
+
+Sehingga pada arsitektur pertama terdapat 3x4 weight + 4 bias dan 4x2 weight + 2 bias. Total adalah 26 parameter yang pada proses training akan mengalami perubahan untuk mendapatkan hasil yang terbaik. Sedangkan pada arsitektur kedua terdapat 41 parameter.
