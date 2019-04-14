@@ -400,3 +400,8 @@ Lalu apa gunanya Autoencoder? Autoencoder biasa digunakan untuk mengurangi dimen
 Setiap neuron pada MLP saling berhubungan yang ditandai dengan tanda panah pada gambar diatas. Tiap koneksi memiliki weight yang nantinya nilai dari tiap weight akan berbeda-beda. Hidden layer dan output layer memiliki tambahan input yang biasa disebut dengan bias.
 
 Sehingga pada arsitektur pertama terdapat 3x4 weight + 4 bias dan 4x2 weight + 2 bias. Total adalah 26 parameter yang pada proses training akan mengalami perubahan untuk mendapatkan hasil yang terbaik. Sedangkan pada arsitektur kedua terdapat 41 parameter.
+
+\section{Features Correlation}
+Bisa jadi tidak semua features mempunyai kontribusi terhadap type hero atau bisa dibiliang naik-turun nya sebuah feature tidak memberikan pengaruh terhadap type hero. Untuk mencari feature tersebut kita bisa menggunakan correlation matrix untuk setiap variable.
+
+Apa itu correlation matrix? Correlation matrix berisi nilai antara -1 dan +1. Sebagai contoh jika correlation antara variable X dan Y benilai -1, maka pada saat nilai X turun, nilai Y akan naik. Jika bernilai +1, maka hubungan antara X dan Y adalah linear. Namun jika nilai correlation semakin dekat dengan 0, maka variable tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
