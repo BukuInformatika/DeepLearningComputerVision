@@ -405,3 +405,12 @@ Sehingga pada arsitektur pertama terdapat 3x4 weight + 4 bias dan 4x2 weight + 2
 Bisa jadi tidak semua features mempunyai kontribusi terhadap type hero atau bisa dibiliang naik-turun nya sebuah feature tidak memberikan pengaruh terhadap type hero. Untuk mencari feature tersebut kita bisa menggunakan correlation matrix untuk setiap variable.
 
 Apa itu correlation matrix? Correlation matrix berisi nilai antara -1 dan +1. Sebagai contoh jika correlation antara variable X dan Y benilai -1, maka pada saat nilai X turun, nilai Y akan naik. Jika bernilai +1, maka hubungan antara X dan Y adalah linear. Namun jika nilai correlation semakin dekat dengan 0, maka variable tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
+
+
+\section{Backward Pass} 
+Simplenya proses ini bermaksud untuk menyesuaikan kembali tiap weight dan bias berdasarkan error yang didapat pada saat forward pass. Tahapan dari backprop adalah sebagai berikut :
+
+\begin{enumerate}
+\item Hitung gradient dari loss function terhadap semua parameter yang ada dengan cara mencari partial derivative atau turunan parsial dari fungsi tersebut.
+\item Update semua parameter atau weight dan bias menggunakan Stochastic Gradient Descent  dengan mengurangi atau menambahkan nilai weight lama dengan sebagian atau learning rate dari nilai gradien yang sudah kita dapat.
+\end{enumerate}
